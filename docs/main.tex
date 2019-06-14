@@ -1,0 +1,86 @@
+\documentclass{extbook}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+
+\geometry{
+	top=50mm,
+	right=50mm,
+	left=50mm
+}
+
+\newcommand{\resetWhitespace}{
+	\setlength{\abovedisplayskip}{4pt}
+	\setlength{\belowdisplayskip}{4pt}
+}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\fancyhead[C]{\small\textit{Theory of information}}
+\fancyhead[L]{\small{290}}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\headsep}{-10pt}
+
+\begin{document}
+
+\begin{center}
+
+\end{center}
+
+\textbf{Axiom A4} \textit{(Normalization)}.  \textit{H}(1/2, 1/2) = 1.
+
+Axiom A4 means that making a choice from equally probably 
+\linebreak
+events/outcomes gives one bit of information.
+
+    \textbf{Axiom A5} \textit{(Symmetry)}. The function H(\textit{$p_{1}$}
+, \textit{$p_{2}$} , \dots, \textit{$p_{n}$}) is symmetric for any permutation of the arguments \textit{$p_{i}$}.
+
+Axiom A5 means that the funcion H($p_{1}$, $p_{2}$, dots, $p_{n}$) depends only on probabilities $p_{1}$, $p_{2}$, \dots, $p_{n}$ but is independent of their order.
+
+The Axiomatic characterization is obtained in the following theorem.
+
+\textbf{Theorem 3.5.1.} The only funcion that satisfies Axioms A1-A5 is the information entropy function H(\textit{$p_{1}$}
+, \textit{$p_{2}$} , \dots, \textit{$p_{n}$}) determined by the formula (3.2.4).
+
+\underline{Proof}. Let us consider the function F(\textit{n}) = \textit{H}(1/\textit{n}, 1/\textit{n}, \dots, 1/\textit{n}) and $r^m$ events with equal probabilites of occurrence. It is possible to decompose choices from all of these events into a series of \textit{m} choices from \textit{r} potential events with equal probobilies of occurrence. In this situation, Axiom A3 gives us the following equality: 
+
+\begin{equation*}
+	\resetWhitespace
+	\textit{F}(\textit{$r^m$}) = \textit{mF}(\textit{r})
+\end{equation*}
+Let us fix some number \textit{t}. Then for any natural number \textit{n}, there is number \textit{m} such that
+\begin{equation*}
+	\resetWhitespace
+	\textit{$r^m$} \leq \textit{$t^n$} < \textit{$r^{m+1}$}
+	\tag{3.5.1}
+\end{equation*}
+Indeed, if \textit{m} is the largest number such that \textit{$r^m \leq t^n$} then \textit{$t^n < r^{m+1}$}.
+As before, Axiom A3 gives us the following equality: 
+\begin{equation}
+	\resetWhitespace
+	\textit{m}\log_{2}r \leq \textit{n} \log_{2}t < (m+1) \log_{2}\textit{r}
+	\tag{3.5.2}
+\end{equation}
+Dividing all therms in the formula (3.5.2) by \textit{n} $log_{2}$\textit{r}, we have
+\begin{equation}
+	\resetWhitespace
+	\textit{$m/n$} \leq (log_{2}\textit{r}) < \textit{$m/n$} + 1/\textit{n}
+	\tag{3.5.3}
+\end{equation}
+This gives us
+\begin{equation}
+	\resetWhitespace
+	\mid (log_{2}\textit{t}/log_{2}\textit{r}) - \textit{$m/n$}\mid  < 1/\textit{n}
+	\tag{3.5.4}
+\end{equation}
+At the same time, Axiom A2 and inequalities (3.5.1), give us
+\begin{equation}
+	\resetWhitespace
+	\textit{F}(\textit{$r^m$}) \leq \textit{F}(\textit{$t^n$}) \leq \textit{F}(\textit{$r^{m+1}$})
+	\notag
+\end{equation}
+
+\end{document}
